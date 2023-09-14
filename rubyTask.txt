@@ -1,0 +1,423 @@
+RUBY TASK-
+
+1. Write a program to check weather a number is positive, negative or zero
+
+	print "Enter a number: "
+	var = gets.to_i
+	if (var>0)
+	    puts("Number is Positive")
+	elsif (var<0)
+	    puts("Number is Negative")
+	else
+	    puts("Number is zero")
+	End
+
+2. Write a program to reverse a number
+
+	print "Enter a number: "
+	var = gets.to_i
+	puts "The number Entered is #{var}"
+	sum=0
+	n=0
+	while (var!=0)
+	    n=var%10
+	    sum=sum*10+n
+	    var=var/10
+	end
+	puts "The reverse of a number is #{sum}"
+
+3. Write a program to check weather a string is palindrome 
+
+	print "Enter a number: "
+	var = gets.to_i
+	temp = var
+	puts "The number Entered is #{var}"
+	sum=0
+	n=0
+	while (var!=0)
+	    n=var%10
+	    sum=sum*10+n
+	    var=var/10
+	end
+	if temp==sum
+	    puts("Number is Pallindrome")
+	else
+	    puts("Number is not Pallindrome")
+	End
+
+4. Write a program for calculator having functionality like addition, subtraction, multiplication, division showing remainder and quotient 
+
+	begin
+	    puts "Choose an operation:"
+	    puts "1. Addition"
+	    puts "2. Subtraction"
+	    puts "3. Multiplication"
+	    puts "4. Division"
+	    puts "5. Exit"
+	    print "Enter your choice (1/2/3/4/5): "
+	    choice = gets.chomp.to_i
+	  
+	    case choice
+	    when 1
+	      puts "You selected Addition."
+		puts "Enter first number:"
+		num1 = gets.to_i
+		puts "Enter second number:"
+		num2 = gets.to_i
+		sum = num1+num2
+		puts "Addition is: #{sum}"
+	    when 2
+		puts "You selected Subtraction."
+		print "Enter first number:"
+		num1 = gets.to_i
+		print "Enter second number:"
+		num2 = gets.to_i
+		diff = num1-num2
+		print "Subtration is: #{diff}"
+	    when 3
+		puts "You selected Multiplication."
+		print "Enter first number:"
+		num1 = gets.to_i
+		print "Enter second number:"
+		num2 = gets.to_i
+		mul = num1*num2
+		print "Multiplication is: #{mul}"
+	    when 4
+		puts "You selected Division"
+		print "Enter the dividend: "
+		dividend = gets.chomp.to_i
+		print "Enter the divisor: "
+		divisor = gets.to_i
+
+		if divisor == 0
+		    puts "Division by zero is not allowed."
+		else
+		    quotient = dividend / divisor
+		    remainder = dividend % divisor
+		end
+		puts "Quotient: #{quotient}"
+		puts "Remainder: #{remainder}"
+	    when 5
+	      puts "Exiting the program. Goodbye!"
+	    else
+	      puts "Invalid choice. Please choose a valid option (1/2/3/4/5)."
+	    end
+	  end while choice != 5
+  
+5. Write a program for table from 2 to 10
+
+	puts "Enter which table you want to print"
+	var = gets.to_i
+		  for i in 1..10
+	    puts "#{var} x #{1} = #{var*i}"
+	end    
+
+
+
+6. Write a program to find minimum and maximum between two number 
+	
+	puts "Enter first numbers"
+	var1 = gets.to_i
+	puts "Enter second numbers"
+	var2 = gets.to_i
+
+	if var1>var2
+	    puts "#{var1} is greater"
+	elsif var1<var2
+	    puts "#{var2} is greater"
+	else 
+	    puts "No. is equal"      
+	end       
+
+7. Write a program to find square root and cube root of a number given by user
+
+	puts "Enter first numbers"
+	var = gets.to_i
+	puts "Square root of #{var} is #{var*var}"
+	puts "Cube root of #{var} is #{var*var*var}"
+
+8. Write a program to find minimum and maximum in an array
+
+	nums = Array[1,5,8,-2,55,3]
+	max=nums[0]
+	min=nums[0]
+	for i in nums
+	    max=i if i>max
+	    min=i if i<min  
+	end    
+	puts "#{max}"
+	puts "#{min}"
+
+
+9. Write a program to find even and odd number in an array
+
+	nums = Array[1,5,8,-2,55,3]
+	even = Array.new
+	odd = Array.new
+	for i in nums
+	    even.push(i) if i%2==0
+	    odd.push(i) if i%2!=0  
+	end    
+	puts "#{even}"
+	puts "#{odd}"
+
+
+10. Write a program to find even numbers between 1 to 100
+
+	for i in 1..100
+	    puts i if i%2==0
+	end    
+
+11. Write a program to find odd numbers between 1 to 100
+
+	for i in 1..100
+	    puts i if i%2!=0
+	end   
+
+12. Write a program to find factorial of a number enter by user
+
+	puts "Enter a number"
+	var = gets.to_i
+	result=1
+	while var>0
+	    result = result*var
+	    var-=1
+	end
+	puts "#{result}"
+
+
+13. Write a program to find sum of digits of a number
+
+	print "Enter a number: "
+	var = gets.to_i
+	puts "The number Entered is #{var}"
+	sum=0
+	n=0
+	while (var!=0)
+	    n=var%10
+	    sum=sum+n
+	    var=var/10
+	end
+	puts "The sum is #{sum}"
+
+14. Write a program to find a number is prime or not given by user
+
+
+	def is_prime?(num)
+	    return false if (num < 2)
+	  
+	    (2..(num - 1)).each do |n|
+	      return false if num % n == 0
+	    end
+	  
+	    true
+	  end
+
+	  print "Enter a number: "
+	  num = gets.to_i
+	  if is_prime?(num)
+	    puts "#{num} is a prime number."
+	  else
+	    puts "#{num} is not a prime number."
+	  end  
+
+
+15. Write a program to reverse a string given by user
+
+	print "Enter a string: "
+	st = gets
+	puts "String is #{st}"
+
+	rs = ""
+
+	i = st.length - 1
+	while i >= 0
+	  rs += st[i]
+	  i -= 1
+	end
+
+	puts "Reversed string is #{rs}"
+
+15. Write a program to check a string is palindrome
+
+	print "Enter a string: "
+	st = gets.chomp
+	temp = st.clone
+	puts "String is #{st}"
+
+	rs = ""
+
+	i = st.length - 1
+	while i >= 0
+	  rs += st[i]
+	  i -= 1
+	end
+
+	if rs==temp
+	    puts "String is pallindrome" 
+	else  
+	    puts "String is not pallindrome"
+	end      
+
+	16. Write a program to remove spaces from a string given by user
+
+		print "Enter a string: "
+	str = gets.chomp
+	puts "String is #{str}"
+
+	rs=''
+	str.each_char do |char|
+	    rs += char if char!=' '
+	end
+	puts rs
+
+17. Write a program to print pyramid using *
+
+	print "Enter the number of rows for the pyramid: "
+	rows = gets.chomp.to_i
+
+	if rows <= 0
+	  puts "Please enter a positive number of rows."
+	else
+	  puts "Pyramid pattern with #{rows} rows:"
+	  for i in 1..rows
+	    puts "* " * i
+	  end
+	end
+
+18. Write a program to print inverted pyarmid using *
+
+	print "Enter the number of rows for the inverted pyramid: "
+	rows = gets.chomp.to_i
+
+	if rows <= 0
+	  puts "Please enter a positive number of rows."
+	else
+	  puts "Inverted Pyramid pattern with #{rows} rows:"
+	  rows.downto(1) do |i|
+	    puts "* " * i
+	  end
+	end
+
+19. Write a program to sort an array in ascending order
+
+	array = [5, 1, 2, 3, 8]
+	sorted_array = array.sort
+	puts "Sorted array in ascending order: #{sorted_array}"
+
+	20. Write a program to sort an array in descending order
+		
+		array = [5, 1, 2, 3, 8]
+	sortedArray = array.sort { |a, b| b <=> a }
+	puts "Sorted array in descending order: #{sortedArray}"
+
+21. Write a program to find number of vowel in a string
+
+	print "Enter a string: "
+	str = gets.chomp.downcase 
+	vowels = 'aeiou'
+	count = 0
+
+	str.each_char do |char|
+	  if vowels.include?(char)
+	    count += 1
+	  end
+	end
+
+	puts "vowels in the string: #{count}"
+
+22. Write a program to find number of consonant in a string 
+
+	print "Enter a string: "
+	str = gets.chomp.downcase  
+	consonants = 'bcdfghjklmnpqrstvwxyz'
+	count = 0
+
+	str.each_char do |char|
+	  if consonants.include?(char)
+	    count += 1
+	  end
+	end
+
+	puts "consonants in the string: #{count}"
+
+23. Write a program to count all alphabet in a string
+
+	print "Enter a string: "
+	str = gets.chomp.downcase  
+	alphabet_characters = 'abcdefghijklmnopqrstuvwxyz'
+	count = 0
+
+	str.each_char do |char|
+	  if alphabet_characters.include?(char)
+	    count += 1
+	  end
+	end
+
+	puts "Alphabet characters in the string: #{count}"
+
+24. Write a program to add & subtract 10 days in a date 
+
+	require 'date'
+
+	print "Enter a date (yyyy-mm-dd): "
+	dateStr = gets.chomp
+
+	begin
+	  input_date = Date.parse(dateStr)
+	  future_date = input_date + 10
+	  past_date = input_date - 10
+
+	  puts "Input Date: #{input_date}"
+	  puts "Date + 10 days: #{future_date}"
+	  puts "Date - 10 days: #{past_date}"
+	rescue ArgumentError
+	  puts "Invalid date format. Please use yyyy-mm-dd format."
+	end
+
+25. Write a program to add and subtract one year from a date 
+
+	require 'date'
+
+	print "Enter a date (yyyy-mm-dd): "
+	dateStr = gets.chomp
+
+	begin
+	  input_date = Date.parse(dateStr)
+	  future_date = input_date.next_year
+	  past_date = input_date.prev_year
+
+	  puts "Input Date: #{input_date}"
+	  puts "Date + 10 days: #{future_date}"
+	  puts "Date - 10 days: #{past_date}"
+	rescue ArgumentError
+	  puts "Invalid date format. Please use yyyy-mm-dd format."
+	end
+
+26. Write a program to add and subtract one month from a date 
+
+	require 'date'
+	print "Enter a date (yyyy-mm-dd): "
+	dateStr = gets.chomp
+
+	begin
+	  input_date = Date.parse(dateStr)
+	  future_date = input_date.next_month
+	  past_date = input_date.prev_month
+
+	  puts "Input Date: #{input_date}"
+	  puts "Date + 10 days: #{future_date}"
+	  puts "Date - 10 days: #{past_date}"
+	rescue ArgumentError
+	  puts "Invalid date format. Please use yyyy-mm-dd format."
+	end
+
+
+
+
+
+
+
+
+
+
